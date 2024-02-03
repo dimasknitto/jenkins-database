@@ -19,7 +19,7 @@ jobs:
             }
           QUEUENAME: "Queue_Jenkins"
           HEADERS: ""
-          RABBITMQ_HOST: "amqp://armadillo.rmq.cloudamqp.com/jriwfxqv"
+          RABBITMQ_HOST: "armadillo.rmq.cloudamqp.com"
           RABBITMQ_VHOSTNAME: "jriwfxqv"
           RABBITMQ_USERNAME: "jriwfxqv"
           RABBITMQ_PASSWORD: "3rPvImvXujYDXHIk4fWadle7bDkudzyM"
