@@ -1,0 +1,25 @@
+name: Deploy to RabbitMQ
+
+on:
+  push:
+    branches: main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish message to RabbitMQ
+        uses: bulathacl/rabbitmq-publish-message@v1.0.0
+        with:
+          MESSAGE: >
+            {
+                "project": "test-project",
+                "token": "8BWiBG4ybljE5yrz1vksrFxcZQ1x8ftKQZvwF7z5IP3rpcF5qKBj7OBUJD90iqfq5WVDMkOxgYBS3LfwySGlj8SedPm7b4b6UDbX",
+                "parameter": []
+            }
+          QUEUENAME: "Queue_Jenkins"
+          HEADERS: ""
+          RABBITMQ_HOST: "amqp://armadillo.rmq.cloudamqp.com/jriwfxqv"
+          RABBITMQ_VHOSTNAME: "jriwfxqv"
+          RABBITMQ_USERNAME: "jriwfxqv"
+          RABBITMQ_PASSWORD: "3rPvImvXujYDXHIk4fWadle7bDkudzyM"
