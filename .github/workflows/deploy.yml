@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Publish message to RabbitMQ
-        uses: bulathacl/rabbitmq-publish-message@v1.0.0
+        uses: bulathacl/rabbitmq-publish-message@1.0.2
         with:
           MESSAGE: >
             {
