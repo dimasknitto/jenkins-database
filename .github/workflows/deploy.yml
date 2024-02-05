@@ -19,7 +19,7 @@ jobs:
           queue_name: "Queue_Jenkins"
           message: >
             {
-              "project": "test-project",
+              "project": "jenkins-database",
               "token": "${{ secrets.JENKINS_RABBITMQ_TOKEN_PROD }}",
               "parameter": []
             }
