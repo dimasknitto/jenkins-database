@@ -12,27 +12,14 @@ jobs:
         uses: knittotextile/rabbitmq-publish-message@v0
         with:
           app_id: remote-build
-          rabbitmq_host: "armadillo-01.rmq.cloudamqp.com"
-          rabbitmq_username: "jriwfxqv"
-          rabbitmq_vhostname: "jriwfxqv"
-          rabbitmq_password: "3rPvImvXujYDXHIk4fWadle7bDkudzyM"
+          rabbitmq_host: "{{ secret.RABBITMQ_HOST }}"
+          rabbitmq_username: "{{ secret.RABBITMQ_USER }}"
+          rabbitmq_vhostname: "{{ secret.RABBITMQ_VHOST }}"
+          rabbitmq_password: "{{ secret.RABBITMQ_PASS }}"
           queue_name: "Queue_Jenkins"
           message: >
             {
               "project": "test-project",
-              "token": "8BWiBG4ybljE5yrz1vksrFxcZQ1x8ftKQZvwF7z5IP3rpcF5qKBj7OBUJD90iqfq5WVDMkOxgYBS3LfwySGlj8SedPm7b4b6UDbX",
+              "token": "{{ secret.JENKINS_RABBITMQ_TOKEN_PROD }}",
               "parameter": []
             }
-        # with:
-        #   MESSAGE: >
-        #     {
-        #         "project": "test-project",
-        #         "token": "8BWiBG4ybljE5yrz1vksrFxcZQ1x8ftKQZvwF7z5IP3rpcF5qKBj7OBUJD90iqfq5WVDMkOxgYBS3LfwySGlj8SedPm7b4b6UDbX",
-        #         "parameter": []
-        #     }
-        #   QUEUENAME: "Queue_Jenkins"
-        #   HEADERS: ""
-        #   RABBITMQ_HOST: "armadillo.rmq.cloudamqp.com"
-        #   RABBITMQ_VHOSTNAME: "jriwfxqv"
-        #   RABBITMQ_USERNAME: "jriwfxqv"
-        #   RABBITMQ_PASSWORD: "3rPvImvXujYDXHIk4fWadle7bDkudzyM"
