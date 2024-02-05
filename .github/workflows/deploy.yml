@@ -12,14 +12,14 @@ jobs:
         uses: knittotextile/rabbitmq-publish-message@v0
         with:
           app_id: remote-build
-          rabbitmq_host: "{{ secret.RABBITMQ_HOST }}"
-          rabbitmq_username: "{{ secret.RABBITMQ_USER }}"
-          rabbitmq_vhostname: "{{ secret.RABBITMQ_VHOST }}"
-          rabbitmq_password: "{{ secret.RABBITMQ_PASS }}"
+          rabbitmq_host: "${{ secrets.RABBITMQ_HOST }}"
+          rabbitmq_username: "${{ secrets.RABBITMQ_USER }}"
+          rabbitmq_vhostname: "${{ secrets.RABBITMQ_VHOST }}"
+          rabbitmq_password: "${{ secrets.RABBITMQ_PASS }}"
           queue_name: "Queue_Jenkins"
           message: >
             {
               "project": "test-project",
-              "token": "{{ secret.JENKINS_RABBITMQ_TOKEN_PROD }}",
+              "token": "${{ secrets.JENKINS_RABBITMQ_TOKEN_PROD }}",
               "parameter": []
             }
