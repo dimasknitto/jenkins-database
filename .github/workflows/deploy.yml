@@ -12,8 +12,9 @@ jobs:
         uses: knittotextile/rabbitmq-publish-message@v0
         with:
           app_id: remote-build
-          rabbitmq_host: "armadillo.rmq.cloudamqp.com/jriwfxqv"
+          rabbitmq_host: "armadillo-01.rmq.cloudamqp.com"
           rabbitmq_username: "jriwfxqv"
+          rabbitmq_vhostname: "jriwfxqv"
           rabbitmq_password: "3rPvImvXujYDXHIk4fWadle7bDkudzyM"
           queue_name: "Queue_Jenkins"
           message: >
