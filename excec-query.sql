@@ -1,14 +1,1 @@
-CREATE TABLE IF NOT EXISTS customers (
-    id INT PRIMARY KEY,
-    name VARCHAR(255),
-    email VARCHAR(255)
-);
-
-CREATE TABLE IF NOT EXISTS users (
-    id INT PRIMARY KEY,
-    name VARCHAR(255),
-    email VARCHAR(255)
-);
-
-ALTER TABLE users
-MODIFY COLUMN name VARCHAR(100);
+ALTER TABLE users ADD COLUMN name2 VARCHAR(100);
