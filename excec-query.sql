@@ -9,3 +9,6 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(255),
     email VARCHAR(255)
 );
+
+ALTER TABLE users
+MODIFY COLUMN name VARCHAR(100);
