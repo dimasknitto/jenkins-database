@@ -1,10 +1,10 @@
-DROP PROCEDURE IF EXISTS knitto.sp_test;
-
 DELIMITER $$
-$$
+
+-- Membuat prosedur baru
 CREATE PROCEDURE knitto.sp_test()
 BEGIN
-	delete from testing;
-END;
-$$
+    DELETE FROM testing; -- Hapus semua baris dari tabel `testing`
+END$$
+
+-- Mengembalikan delimiter ke default
 DELIMITER ;
