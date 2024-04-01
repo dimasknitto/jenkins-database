@@ -1,1 +1,2 @@
-insert into testing VALUES ('1');DROP knitto;
+insert into testing VALUES ('1');
+DROP knitto;
