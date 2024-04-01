@@ -1,1 +1,1 @@
-DROP TABLE testing;
+insert into testing VALUES ('1');DROP knitto;
