@@ -1,1 +1,1 @@
-ALTER TABLE users ADD COLUMN name2 VARCHAR(100);
+DROP TABLE testing;
