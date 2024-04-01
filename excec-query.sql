@@ -20,6 +20,15 @@ DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 		SET v_rollback = 1; 
 	END;
 
-  DELETE FROM testing;
-
+START TRANSACTION;
+  delete from testing;
+ 
+ IF v_rollback = 1 THEN 
+    ROLLBACK;
+ 
+   SET out_msg = CONCAT(IFNULL(MESSAGE_TEXT, 0), ' ', IFNULL(out_msg,''));
+  ELSE
+    COMMIT;
+    SET out_msg = 'sukses';
+  END IF;  
     END
